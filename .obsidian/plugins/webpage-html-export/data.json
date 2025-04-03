@@ -43,8 +43,11 @@
   "defaultFileIcon": "lucide//file",
   "defaultFolderIcon": "lucide//folder",
   "defaultMediaIcon": "lucide//file-image",
-  "exportPath": "/home/rclovis/Perso/Cours-Python",
+  "exportPath": "/home/rclovis/delivery/tek4/Zero-knowledge-Proof-Systems-and-Applications-in-Blockchain",
   "filesToExport": [
-    []
+    [
+      "sec",
+      "Index.md"
+    ]
   ]
 }
