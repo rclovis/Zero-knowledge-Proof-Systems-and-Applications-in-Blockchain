@@ -1,0 +1,21 @@
+{
+  "show-relative-date": true,
+  "hide-date-display": false,
+  "date-colors": [
+    {
+      "distance": 1,
+      "unit": "days",
+      "direction": "after",
+      "color": "rgba(56, 44, 187, 1)",
+      "isToday": true
+    },
+    {
+      "distance": 1,
+      "unit": "days",
+      "direction": "after",
+      "color": "rgba(197, 139, 255, 1)",
+      "isBefore": true
+    }
+  ],
+  "hide-date-in-title": true
+}

@@ -1,0 +1,1424 @@
+{
+  "workspaces": {
+    "cantonese": {
+      "main": {
+        "id": "f3054455bb6cfd40",
+        "type": "split",
+        "children": [
+          {
+            "id": "ccfff8ea425ca4ba",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "7bde39d215bf8fc7",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "Cantonais/Media/CE1_u3.pdf",
+                    "page": 33,
+                    "left": -36,
+                    "top": 264,
+                    "zoom": 0.45625
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "CE1_u3"
+                }
+              },
+              {
+                "id": "c3993d5b7777c03d",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "Cantonais/Media/CE1_u2.pdf",
+                    "page": 28,
+                    "left": -36,
+                    "top": 236,
+                    "zoom": 0.45625
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "CE1_u2"
+                }
+              },
+              {
+                "id": "735d65b280db2a01",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Cantonais/Cheatsheet.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Cheatsheet"
+                }
+              }
+            ]
+          },
+          {
+            "id": "2961d4266c3859b6",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "ef4593905c945baa",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Cantonais/Quantifiers.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Quantifiers"
+                }
+              },
+              {
+                "id": "20ef2156f2133128",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Cantonais/Dates.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Dates"
+                }
+              }
+            ],
+            "currentTab": 1
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "b165239c26a80535",
+        "type": "split",
+        "children": [
+          {
+            "id": "88a32bebb305e543",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "ea62ebfda23ed8d2",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "autoReveal": false
+                  },
+                  "icon": "lucide-folder-closed",
+                  "title": "Files"
+                }
+              },
+              {
+                "id": "9f946b3bc28fc984",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "prime",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  },
+                  "icon": "lucide-search",
+                  "title": "Search"
+                }
+              },
+              {
+                "id": "48798f83d94d01ed",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {},
+                  "icon": "lucide-bookmark",
+                  "title": "Bookmarks"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 280.0026054382324
+      },
+      "right": {
+        "id": "8bd4da36a98595cd",
+        "type": "split",
+        "children": [
+          {
+            "id": "8d74b0a52cb542bd",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "6a5ca6d980a062d2",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "HKUST/CSIT 5730/Project/eBPF-based Intrusion Detection System.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "Backlinks for eBPF-based Intrusion Detection System"
+                }
+              },
+              {
+                "id": "75fb6f83e8f3bcae",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "HKUST/CSIT 5730/Project/eBPF-based Intrusion Detection System.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-going-out",
+                  "title": "Outgoing links from eBPF-based Intrusion Detection System"
+                }
+              },
+              {
+                "id": "922dd33f3bb286c6",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  },
+                  "icon": "lucide-tags",
+                  "title": "Tags"
+                }
+              },
+              {
+                "id": "3818b3c8945d0cec",
+                "type": "leaf",
+                "state": {
+                  "type": "git-view",
+                  "state": {},
+                  "icon": "git-pull-request",
+                  "title": "Source Control"
+                }
+              },
+              {
+                "id": "cd3dbd6da0a827d1",
+                "type": "leaf",
+                "state": {
+                  "type": "advanced-tables-toolbar",
+                  "state": {},
+                  "icon": "spreadsheet",
+                  "title": "Advanced Tables"
+                }
+              },
+              {
+                "id": "49cb639e17bbf34c",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "HKUST/Cantonais/Intro.md",
+                    "followCursor": false,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-list",
+                  "title": "Outline of Intro"
+                }
+              },
+              {
+                "id": "38f364dc201eb1cc",
+                "type": "leaf",
+                "state": {
+                  "type": "localgraph",
+                  "state": {
+                    "file": "HKUST/first semester/CSIT 5730/1-Crypto/Block cipher mode.md",
+                    "options": {
+                      "collapse-filter": false,
+                      "search": "",
+                      "localJumps": 5,
+                      "localBacklinks": true,
+                      "localForelinks": true,
+                      "localInterlinks": true,
+                      "showTags": false,
+                      "showAttachments": true,
+                      "hideUnresolved": false,
+                      "collapse-color-groups": true,
+                      "colorGroups": [],
+                      "collapse-display": true,
+                      "showArrow": false,
+                      "textFadeMultiplier": 0,
+                      "nodeSizeMultiplier": 1,
+                      "lineSizeMultiplier": 1,
+                      "collapse-forces": true,
+                      "centerStrength": 0.518713248970312,
+                      "repelStrength": 10,
+                      "linkStrength": 1,
+                      "linkDistance": 250,
+                      "scale": 0.26325807581430966,
+                      "close": true
+                    }
+                  },
+                  "icon": "lucide-git-fork",
+                  "title": "Graph of Block cipher mode"
+                }
+              },
+              {
+                "id": "2d42e37d37c55938",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "6bf5ad9ed0ef9509",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "0aa13e992a7f2f60",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "2e89ee94f2c233b1",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "7a9815da732c6816",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "24854be68ba81cc8",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "b297142dc76c86ec",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "dc6ed4a8dd0253ca",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "6aeaaa2e1cba0630",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "4ddba338b75151f2",
+                "type": "leaf",
+                "state": {
+                  "type": "Saved Queries View",
+                  "state": {},
+                  "icon": "feather-mouse-pointer",
+                  "title": "Saved Queries"
+                }
+              }
+            ],
+            "currentTab": 16
+          }
+        ],
+        "direction": "horizontal",
+        "width": 267,
+        "collapsed": true
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "switcher:Open quick switcher": false,
+          "graph:Open graph view": false,
+          "canvas:Create new canvas": false,
+          "daily-notes:Open today's daily note": false,
+          "templates:Insert template": false,
+          "command-palette:Open command palette": false,
+          "markdown-importer:Open format converter": false,
+          "obsidian-git:Open Git source control": false,
+          "table-editor-obsidian:Advanced Tables Toolbar": false,
+          "pdf-plus:PDF++: Toggle auto-copy": false,
+          "pdf-plus:PDF++: Toggle auto-focus": false,
+          "pdf-plus:PDF++: Toggle auto-paste": false,
+          "obsidian-excalidraw-plugin:New drawing": false,
+          "workspaces:Manage workspace layouts": false
+        }
+      },
+      "active": "20ef2156f2133128",
+      "mtime": "2025-03-22T23:34:24+08:00"
+    },
+    "crypto": {
+      "main": {
+        "id": "f3054455bb6cfd40",
+        "type": "split",
+        "children": [
+          {
+            "id": "ccfff8ea425ca4ba",
+            "type": "tabs",
+            "dimension": 46.38364779874214,
+            "children": [
+              {
+                "id": "92341e93c6dc0b61",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "HKUST/CSIT 5710/media/2-Probability.pdf",
+                    "page": 11,
+                    "left": -22,
+                    "top": 44,
+                    "zoom": 0.7541666666666668
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "2-Probability"
+                }
+              },
+              {
+                "id": "75f4f23f5d682567",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "HKUST/CSIT 5710/media/4-CPA-security.pdf",
+                    "page": 40,
+                    "left": -29,
+                    "top": 66,
+                    "zoom": 0.5604166666666668
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "4-CPA-security"
+                }
+              },
+              {
+                "id": "7bde39d215bf8fc7",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "HKUST/CSIT 5710/media/6-Hash functions.pdf",
+                    "page": 97,
+                    "left": -28,
+                    "top": 87,
+                    "zoom": 0.6083333333333333
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "6-Hash functions"
+                }
+              }
+            ],
+            "currentTab": 1
+          },
+          {
+            "id": "2961d4266c3859b6",
+            "type": "tabs",
+            "dimension": 53.61635220125787,
+            "children": [
+              {
+                "id": "ef4593905c945baa",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "HKUST/CSIT 5710/Midterm.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Midterm"
+                }
+              },
+              {
+                "id": "6de9a27ffabd4fad",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "HKUST/CSIT 5710/media/0-Probability Review.pdf",
+                    "page": 1,
+                    "zoom": 1
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "0-Probability Review"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "b165239c26a80535",
+        "type": "split",
+        "children": [
+          {
+            "id": "88a32bebb305e543",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "ea62ebfda23ed8d2",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "autoReveal": false
+                  },
+                  "icon": "lucide-folder-closed",
+                  "title": "Files"
+                }
+              },
+              {
+                "id": "9f946b3bc28fc984",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "Merkle",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  },
+                  "icon": "lucide-search",
+                  "title": "Search"
+                }
+              },
+              {
+                "id": "48798f83d94d01ed",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {},
+                  "icon": "lucide-bookmark",
+                  "title": "Bookmarks"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 280.0026054382324
+      },
+      "right": {
+        "id": "8bd4da36a98595cd",
+        "type": "split",
+        "children": [
+          {
+            "id": "8d74b0a52cb542bd",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "6a5ca6d980a062d2",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "HKUST/CSIT 5730/Project/eBPF-based Intrusion Detection System.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "Backlinks for eBPF-based Intrusion Detection System"
+                }
+              },
+              {
+                "id": "75fb6f83e8f3bcae",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "HKUST/CSIT 5730/Project/eBPF-based Intrusion Detection System.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-going-out",
+                  "title": "Outgoing links from eBPF-based Intrusion Detection System"
+                }
+              },
+              {
+                "id": "922dd33f3bb286c6",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  },
+                  "icon": "lucide-tags",
+                  "title": "Tags"
+                }
+              },
+              {
+                "id": "3818b3c8945d0cec",
+                "type": "leaf",
+                "state": {
+                  "type": "git-view",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "Plugin no longer active"
+                }
+              },
+              {
+                "id": "cd3dbd6da0a827d1",
+                "type": "leaf",
+                "state": {
+                  "type": "advanced-tables-toolbar",
+                  "state": {},
+                  "icon": "spreadsheet",
+                  "title": "Advanced Tables"
+                }
+              },
+              {
+                "id": "49cb639e17bbf34c",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "HKUST/Cantonais/Intro.md",
+                    "followCursor": false,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-list",
+                  "title": "Outline of Intro"
+                }
+              },
+              {
+                "id": "38f364dc201eb1cc",
+                "type": "leaf",
+                "state": {
+                  "type": "localgraph",
+                  "state": {
+                    "file": "HKUST/CSIT 5710/Midterm.md",
+                    "options": {
+                      "collapse-filter": false,
+                      "search": "",
+                      "localJumps": 5,
+                      "localBacklinks": true,
+                      "localForelinks": true,
+                      "localInterlinks": true,
+                      "showTags": false,
+                      "showAttachments": true,
+                      "hideUnresolved": false,
+                      "collapse-color-groups": true,
+                      "colorGroups": [],
+                      "collapse-display": true,
+                      "showArrow": false,
+                      "textFadeMultiplier": 0,
+                      "nodeSizeMultiplier": 1,
+                      "lineSizeMultiplier": 1,
+                      "collapse-forces": true,
+                      "centerStrength": 0.518713248970312,
+                      "repelStrength": 10,
+                      "linkStrength": 1,
+                      "linkDistance": 250,
+                      "scale": 0.26325807581430966,
+                      "close": true
+                    }
+                  },
+                  "icon": "lucide-git-fork",
+                  "title": "Graph of Midterm"
+                }
+              },
+              {
+                "id": "9f2fc1522cf82559",
+                "type": "leaf",
+                "state": {
+                  "type": "Saved Queries View",
+                  "state": {},
+                  "icon": "feather-mouse-pointer",
+                  "title": "Saved Queries"
+                }
+              }
+            ],
+            "currentTab": 6
+          }
+        ],
+        "direction": "horizontal",
+        "width": 267,
+        "collapsed": true
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "switcher:Open quick switcher": false,
+          "graph:Open graph view": false,
+          "canvas:Create new canvas": false,
+          "daily-notes:Open today's daily note": false,
+          "templates:Insert template": false,
+          "command-palette:Open command palette": false,
+          "markdown-importer:Open format converter": false,
+          "obsidian-git:Open Git source control": false,
+          "table-editor-obsidian:Advanced Tables Toolbar": false,
+          "pdf-plus:PDF++: Toggle auto-copy": false,
+          "pdf-plus:PDF++: Toggle auto-focus": false,
+          "pdf-plus:PDF++: Toggle auto-paste": false,
+          "obsidian-excalidraw-plugin:New drawing": false,
+          "workspaces:Manage workspace layouts": false
+        }
+      },
+      "active": "ef4593905c945baa",
+      "mtime": "2025-03-25T16:54:50+08:00"
+    },
+    "IP": {
+      "main": {
+        "id": "f3054455bb6cfd40",
+        "type": "split",
+        "children": [
+          {
+            "id": "ccfff8ea425ca4ba",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "75f4f23f5d682567",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "HKUST/IP/Meeting.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Meeting"
+                }
+              },
+              {
+                "id": "d1ca0f0bd3ea1fa1",
+                "type": "leaf",
+                "state": {
+                  "type": "canvas",
+                  "state": {
+                    "file": "HKUST/IP/sec/Anon circuit.canvas",
+                    "viewState": {
+                      "x": 282.3210687293254,
+                      "y": 592.2148063824441,
+                      "zoom": -0.06643783721824827
+                    }
+                  },
+                  "icon": "lucide-layout-dashboard",
+                  "title": "Anon circuit"
+                }
+              }
+            ],
+            "currentTab": 1
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "b165239c26a80535",
+        "type": "split",
+        "children": [
+          {
+            "id": "88a32bebb305e543",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "ea62ebfda23ed8d2",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "autoReveal": false
+                  },
+                  "icon": "lucide-folder-closed",
+                  "title": "Files"
+                }
+              },
+              {
+                "id": "9f946b3bc28fc984",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "Merkle",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  },
+                  "icon": "lucide-search",
+                  "title": "Search"
+                }
+              },
+              {
+                "id": "48798f83d94d01ed",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {},
+                  "icon": "lucide-bookmark",
+                  "title": "Bookmarks"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 280.0026054382324
+      },
+      "right": {
+        "id": "8bd4da36a98595cd",
+        "type": "split",
+        "children": [
+          {
+            "id": "8d74b0a52cb542bd",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "6a5ca6d980a062d2",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "HKUST/CSIT 5730/Project/eBPF-based Intrusion Detection System.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "Backlinks for eBPF-based Intrusion Detection System"
+                }
+              },
+              {
+                "id": "75fb6f83e8f3bcae",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "HKUST/CSIT 5730/Project/eBPF-based Intrusion Detection System.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-going-out",
+                  "title": "Outgoing links from eBPF-based Intrusion Detection System"
+                }
+              },
+              {
+                "id": "922dd33f3bb286c6",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  },
+                  "icon": "lucide-tags",
+                  "title": "Tags"
+                }
+              },
+              {
+                "id": "3818b3c8945d0cec",
+                "type": "leaf",
+                "state": {
+                  "type": "git-view",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "Plugin no longer active"
+                }
+              },
+              {
+                "id": "cd3dbd6da0a827d1",
+                "type": "leaf",
+                "state": {
+                  "type": "advanced-tables-toolbar",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "Plugin no longer active"
+                }
+              },
+              {
+                "id": "49cb639e17bbf34c",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "HKUST/Cantonais/Intro.md",
+                    "followCursor": false,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-list",
+                  "title": "Outline of Intro"
+                }
+              },
+              {
+                "id": "38f364dc201eb1cc",
+                "type": "leaf",
+                "state": {
+                  "type": "localgraph",
+                  "state": {
+                    "file": "HKUST/IP/Zeto anon.excalidraw.md",
+                    "options": {
+                      "collapse-filter": false,
+                      "search": "",
+                      "localJumps": 5,
+                      "localBacklinks": true,
+                      "localForelinks": true,
+                      "localInterlinks": true,
+                      "showTags": false,
+                      "showAttachments": true,
+                      "hideUnresolved": false,
+                      "collapse-color-groups": true,
+                      "colorGroups": [],
+                      "collapse-display": true,
+                      "showArrow": false,
+                      "textFadeMultiplier": 0,
+                      "nodeSizeMultiplier": 1,
+                      "lineSizeMultiplier": 1,
+                      "collapse-forces": true,
+                      "centerStrength": 0.518713248970312,
+                      "repelStrength": 10,
+                      "linkStrength": 1,
+                      "linkDistance": 250,
+                      "scale": 0.26325807581430966,
+                      "close": true
+                    }
+                  },
+                  "icon": "lucide-git-fork",
+                  "title": "Graph of Zeto anon.excalidraw"
+                }
+              },
+              {
+                "id": "9f2fc1522cf82559",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "8160e6135bdc1828",
+                "type": "leaf",
+                "state": {
+                  "type": "Saved Queries View",
+                  "state": {},
+                  "icon": "feather-mouse-pointer",
+                  "title": "Saved Queries"
+                }
+              }
+            ],
+            "currentTab": 8
+          }
+        ],
+        "direction": "horizontal",
+        "width": 267,
+        "collapsed": true
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "switcher:Open quick switcher": false,
+          "graph:Open graph view": false,
+          "canvas:Create new canvas": false,
+          "daily-notes:Open today's daily note": false,
+          "templates:Insert template": false,
+          "command-palette:Open command palette": false,
+          "markdown-importer:Open format converter": false,
+          "obsidian-git:Open Git source control": false,
+          "pdf-plus:PDF++: Toggle auto-copy": false,
+          "pdf-plus:PDF++: Toggle auto-focus": false,
+          "pdf-plus:PDF++: Toggle auto-paste": false,
+          "obsidian-excalidraw-plugin:New drawing": false,
+          "workspaces:Manage workspace layouts": false
+        }
+      },
+      "active": "8160e6135bdc1828",
+      "mtime": "2025-04-02T12:59:24+08:00"
+    },
+    "forensics": {
+      "main": {
+        "id": "f3054455bb6cfd40",
+        "type": "split",
+        "children": [
+          {
+            "id": "ccfff8ea425ca4ba",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "7bde39d215bf8fc7",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "Cantonais/Media/CE1_u3.pdf",
+                    "page": 33,
+                    "left": -33,
+                    "top": 270,
+                    "zoom": 0.45859375
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "CE1_u3"
+                }
+              },
+              {
+                "id": "c3993d5b7777c03d",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "Cantonais/Media/CE1_u2.pdf",
+                    "page": 28,
+                    "left": -36,
+                    "top": 236,
+                    "zoom": 0.45625
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "CE1_u2"
+                }
+              },
+              {
+                "id": "735d65b280db2a01",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Cantonais/Cheatsheet.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Cheatsheet"
+                }
+              }
+            ]
+          },
+          {
+            "id": "2961d4266c3859b6",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "ef4593905c945baa",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Cantonais/Quantifiers.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Quantifiers"
+                }
+              },
+              {
+                "id": "20ef2156f2133128",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Cantonais/Common sentences.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Common sentences"
+                }
+              }
+            ],
+            "currentTab": 1
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "b165239c26a80535",
+        "type": "split",
+        "children": [
+          {
+            "id": "88a32bebb305e543",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "ea62ebfda23ed8d2",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "autoReveal": false
+                  },
+                  "icon": "lucide-folder-closed",
+                  "title": "Files"
+                }
+              },
+              {
+                "id": "9f946b3bc28fc984",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "prime",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  },
+                  "icon": "lucide-search",
+                  "title": "Search"
+                }
+              },
+              {
+                "id": "48798f83d94d01ed",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {},
+                  "icon": "lucide-bookmark",
+                  "title": "Bookmarks"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 280.0026054382324
+      },
+      "right": {
+        "id": "8bd4da36a98595cd",
+        "type": "split",
+        "children": [
+          {
+            "id": "8d74b0a52cb542bd",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "6a5ca6d980a062d2",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "HKUST/CSIT 5730/Project/eBPF-based Intrusion Detection System.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "Backlinks for eBPF-based Intrusion Detection System"
+                }
+              },
+              {
+                "id": "75fb6f83e8f3bcae",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "HKUST/CSIT 5730/Project/eBPF-based Intrusion Detection System.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-going-out",
+                  "title": "Outgoing links from eBPF-based Intrusion Detection System"
+                }
+              },
+              {
+                "id": "922dd33f3bb286c6",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  },
+                  "icon": "lucide-tags",
+                  "title": "Tags"
+                }
+              },
+              {
+                "id": "3818b3c8945d0cec",
+                "type": "leaf",
+                "state": {
+                  "type": "git-view",
+                  "state": {},
+                  "icon": "git-pull-request",
+                  "title": "Source Control"
+                }
+              },
+              {
+                "id": "cd3dbd6da0a827d1",
+                "type": "leaf",
+                "state": {
+                  "type": "advanced-tables-toolbar",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "Plugin no longer active"
+                }
+              },
+              {
+                "id": "49cb639e17bbf34c",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "HKUST/Cantonais/Intro.md",
+                    "followCursor": false,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-list",
+                  "title": "Outline of Intro"
+                }
+              },
+              {
+                "id": "38f364dc201eb1cc",
+                "type": "leaf",
+                "state": {
+                  "type": "localgraph",
+                  "state": {
+                    "file": "HKUST/first semester/CSIT 5730/1-Crypto/Block cipher mode.md",
+                    "options": {
+                      "collapse-filter": false,
+                      "search": "",
+                      "localJumps": 5,
+                      "localBacklinks": true,
+                      "localForelinks": true,
+                      "localInterlinks": true,
+                      "showTags": false,
+                      "showAttachments": true,
+                      "hideUnresolved": false,
+                      "collapse-color-groups": true,
+                      "colorGroups": [],
+                      "collapse-display": true,
+                      "showArrow": false,
+                      "textFadeMultiplier": 0,
+                      "nodeSizeMultiplier": 1,
+                      "lineSizeMultiplier": 1,
+                      "collapse-forces": true,
+                      "centerStrength": 0.518713248970312,
+                      "repelStrength": 10,
+                      "linkStrength": 1,
+                      "linkDistance": 250,
+                      "scale": 0.26325807581430966,
+                      "close": true
+                    }
+                  },
+                  "icon": "lucide-git-fork",
+                  "title": "Graph of Block cipher mode"
+                }
+              },
+              {
+                "id": "2d42e37d37c55938",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "6bf5ad9ed0ef9509",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "0aa13e992a7f2f60",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "2e89ee94f2c233b1",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "7a9815da732c6816",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "24854be68ba81cc8",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "b297142dc76c86ec",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "dc6ed4a8dd0253ca",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "6aeaaa2e1cba0630",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "4ddba338b75151f2",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "2bd8ef18863b18bf",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "New tab"
+                }
+              },
+              {
+                "id": "830fff8a51de279e",
+                "type": "leaf",
+                "state": {
+                  "type": "Saved Queries View",
+                  "state": {},
+                  "icon": "feather-mouse-pointer",
+                  "title": "Saved Queries"
+                }
+              }
+            ],
+            "currentTab": 18
+          }
+        ],
+        "direction": "horizontal",
+        "width": 267,
+        "collapsed": true
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "switcher:Open quick switcher": false,
+          "graph:Open graph view": false,
+          "canvas:Create new canvas": false,
+          "daily-notes:Open today's daily note": false,
+          "templates:Insert template": false,
+          "command-palette:Open command palette": false,
+          "markdown-importer:Open format converter": false,
+          "obsidian-git:Open Git source control": false,
+          "pdf-plus:PDF++: Toggle auto-copy": false,
+          "pdf-plus:PDF++: Toggle auto-focus": false,
+          "pdf-plus:PDF++: Toggle auto-paste": false,
+          "obsidian-excalidraw-plugin:New drawing": false,
+          "workspaces:Manage workspace layouts": false
+        }
+      },
+      "active": "7bde39d215bf8fc7",
+      "mtime": "2025-03-30T13:02:17+08:00"
+    }
+  },
+  "active": "IP"
+}

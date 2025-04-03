@@ -1,0 +1,30 @@
+{
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 90
+  },
+  "alwaysUpdateLinks": true,
+  "spellcheckDictionary": [
+    "Whanos",
+    "Kubespray",
+    "Nito",
+    "Saltzer",
+    "cryptosystem",
+    "keystreams",
+    "quicksort",
+    "Quickselect",
+    "Genbank",
+    "subproblems",
+    "Subproblems",
+    "subproblem",
+    "cybersystem",
+    "eBPF",
+    "Itemsets"
+  ],
+  "showInlineTitle": true,
+  "promptDelete": false,
+  "spellcheck": false
+}

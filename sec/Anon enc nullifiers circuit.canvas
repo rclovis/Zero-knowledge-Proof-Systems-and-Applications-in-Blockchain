@@ -1,0 +1,16 @@
+{
+	"nodes":[
+		{"id":"e7d5225131d40993","type":"text","text":"- **Encrypted Data**:\n\t- Uses **ECDH** to compute a shared secret: `shared_secret = ECDH(privKey_A, pubKey_B)`.\n\t- Encrypts `(value=10, salt_B)` with `shared_secret` and a `nonce`.\n\t- Generates `encryptedValues` (e.g., `[encrypted_value, encrypted_salt, parity_bit]`).","x":78,"y":-50,"width":250,"height":60},
+		{"id":"3595e3c44bb694e2","type":"text","text":"### Anon Circuit\n#### Compute\n```\n(sender_pub_k, receiver_pub_k) := public_k\nInput_UTXO' = hash(value_in, salt, sender_pub_k)\nOutput_UTXO' = hash(value_out, salt, sender_pub_k/receiver_pub_k)\nNullifier' = hash(value_in, salt, sender_priv_k)\nShared_key = ECDH(sender_priv_k, receiver_pub_k)\nCiphertext = E(Value, Salt, Shared_key, Nonce)\n```\n#### Verify\n```\nInput_UTXO' == Input_UTXO\nOutput_UTXO' == Output_UTXO\nNullifier' == Nullifier\nvalue_in == value_out\nsender_pub -> secret_sender_k\nCheckSMTProof(SMT_root, Merkle_proof, enabled)\n```","x":-235,"y":-140,"width":615,"height":540,"color":"3"},
+		{"id":"e869d77d7b06d825","type":"text","text":"### Public Inputs\n**Nullifier**\n**Output UTXOs**\n**Encryption Nonce**\n**SMT root**\n**enabled**","x":-52,"y":-400,"width":250,"height":217,"color":"4"},
+		{"id":"6c58fcbf31c49169","type":"text","text":"### Private Inputs\n**Input UTXOs**\n**Input values, salt**\n**Output values, salt**\n**Sender Private Key**\n**Public keys**\n**Merkle Proof**\n","x":-560,"y":25,"width":250,"height":210,"color":"4"},
+		{"id":"bc994cca5bf88ba2","type":"text","text":"### Validity : *{0, 1}*","x":440,"y":100,"width":250,"height":60,"color":"1"},
+		{"id":"3a28c2973eff41ad","type":"text","text":"### Reciever: *Ciphertext*\n","x":690,"y":235,"width":250,"height":60}
+	],
+	"edges":[
+		{"id":"b55004d7a27bd095","fromNode":"3595e3c44bb694e2","fromSide":"right","toNode":"bc994cca5bf88ba2","toSide":"left"},
+		{"id":"5f72d523acaa299b","fromNode":"e869d77d7b06d825","fromSide":"bottom","toNode":"3595e3c44bb694e2","toSide":"top"},
+		{"id":"eb51cb0c137cf34d","fromNode":"6c58fcbf31c49169","fromSide":"right","toNode":"3595e3c44bb694e2","toSide":"left"},
+		{"id":"ecb80283b839b374","fromNode":"bc994cca5bf88ba2","fromSide":"bottom","toNode":"3a28c2973eff41ad","toSide":"left","label":"1"}
+	]
+}
