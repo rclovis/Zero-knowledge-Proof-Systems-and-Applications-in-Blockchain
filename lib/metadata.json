@@ -1,21 +1,27 @@
 {
   "vaultName": "vault",
-  "lastExport": 1743654611059,
+  "lastExport": 1743765751005,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon trim-cols table-lines row-hover",
   "useCustomHeadContent": false,
   "useCustomFavicon": false,
   "files": [
-    "sec/Anon circuit.canvas",
-    "sec/Anon enc circuit.canvas",
-    "sec/Anon enc nullifiers circuit.canvas",
-    "sec/anon-circuit.html",
-    "sec/anon-enc-circuit.html",
-    "sec/anon-enc-nullifiers-circuit.html",
-    "sec/Privacy Pattern 1 Zeto Anon.md",
-    "sec/Privacy Pattern 2 Zeto Enc.md",
-    "sec/Privacy Pattern 3 Zeto Enc Nullifiers.md",
+    "sec/Anon nullifiers circuit.canvas",
+    "sec/utils.html",
+    "sec/Utils.md",
+    "sec/privacy-pattern-4-kyc.html",
+    "sec/privacy-pattern-3-zeto-enc-nullifiers.html",
+    "sec/privacy-pattern-2-zeto-enc.html",
+    "sec/privacy-pattern-1-zeto-anon.html",
     "sec/Privacy Pattern 4 KYC.md",
+    "sec/Privacy Pattern 3 Zeto Enc Nullifiers.md",
+    "sec/Privacy Pattern 2 Zeto Enc.md",
+    "sec/Privacy Pattern 1 Zeto Anon.md",
+    "sec/anon-enc-nullifiers-circuit.html",
+    "sec/anon-enc-circuit.html",
+    "sec/anon-circuit.html",
+    "sec/Anon enc circuit.canvas",
+    "sec/Anon circuit.canvas",
     "Index.md",
     "lib/scripts/graph-wasm.wasm",
     "lib/fonts/94f2f163d4b698242fef.otf",
@@ -83,254 +89,290 @@
     "lib/styles/main-styles.css"
   ],
   "fileInfo": {
-    "sec/Anon circuit.canvas": {
-      "modifiedTime": 1743654611059,
-      "sourceSize": 11448,
-      "exportedPath": "sec/anon-circuit.html",
+    "sec/Anon nullifiers circuit.canvas": {
+      "modifiedTime": 1743765751005,
+      "sourceSize": 16663,
+      "exportedPath": "sec/anon-nullifiers-circuit.html",
       "dependencies": []
     },
-    "sec/Anon enc circuit.canvas": {
-      "modifiedTime": 1743654611059,
-      "sourceSize": 2081,
-      "exportedPath": "sec/anon-enc-circuit.html",
+    "sec/utils.html": {
+      "modifiedTime": 1743765751005,
+      "sourceSize": 55686,
+      "exportedPath": "sec/utils.html",
       "dependencies": []
     },
-    "sec/Anon enc nullifiers circuit.canvas": {
-      "modifiedTime": 1743654611059,
-      "sourceSize": 2266,
-      "exportedPath": "sec/anon-enc-nullifiers-circuit.html",
+    "sec/Utils.md": {
+      "modifiedTime": 1743765751005,
+      "sourceSize": 5149,
+      "exportedPath": "sec/utils.html",
       "dependencies": []
     },
-    "sec/anon-circuit.html": {
-      "modifiedTime": 1743654611059,
-      "sourceSize": 101299,
-      "exportedPath": "sec/anon-circuit.html",
+    "sec/privacy-pattern-4-kyc.html": {
+      "modifiedTime": 1743765751005,
+      "sourceSize": 30947,
+      "exportedPath": "sec/privacy-pattern-4-kyc.html",
       "dependencies": []
     },
-    "sec/anon-enc-circuit.html": {
-      "modifiedTime": 1743654611059,
-      "sourceSize": 33795,
-      "exportedPath": "sec/anon-enc-circuit.html",
-      "dependencies": []
-    },
-    "sec/anon-enc-nullifiers-circuit.html": {
-      "modifiedTime": 1743654611059,
-      "sourceSize": 34208,
-      "exportedPath": "sec/anon-enc-nullifiers-circuit.html",
-      "dependencies": []
-    },
-    "sec/Privacy Pattern 1 Zeto Anon.md": {
-      "modifiedTime": 1743654611059,
-      "sourceSize": 2579,
-      "exportedPath": "sec/privacy-pattern-1-zeto-anon.html",
-      "dependencies": []
-    },
-    "sec/Privacy Pattern 2 Zeto Enc.md": {
-      "modifiedTime": 1743654611059,
-      "sourceSize": 2504,
-      "exportedPath": "sec/privacy-pattern-2-zeto-enc.html",
-      "dependencies": []
-    },
-    "sec/Privacy Pattern 3 Zeto Enc Nullifiers.md": {
-      "modifiedTime": 1743654611059,
-      "sourceSize": 2671,
+    "sec/privacy-pattern-3-zeto-enc-nullifiers.html": {
+      "modifiedTime": 1743765751005,
+      "sourceSize": 33855,
       "exportedPath": "sec/privacy-pattern-3-zeto-enc-nullifiers.html",
       "dependencies": []
     },
+    "sec/privacy-pattern-2-zeto-enc.html": {
+      "modifiedTime": 1743765751005,
+      "sourceSize": 33340,
+      "exportedPath": "sec/privacy-pattern-2-zeto-enc.html",
+      "dependencies": []
+    },
+    "sec/privacy-pattern-1-zeto-anon.html": {
+      "modifiedTime": 1743765751005,
+      "sourceSize": 33178,
+      "exportedPath": "sec/privacy-pattern-1-zeto-anon.html",
+      "dependencies": []
+    },
     "sec/Privacy Pattern 4 KYC.md": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 2327,
       "exportedPath": "sec/privacy-pattern-4-kyc.html",
       "dependencies": []
     },
+    "sec/Privacy Pattern 3 Zeto Enc Nullifiers.md": {
+      "modifiedTime": 1743765751005,
+      "sourceSize": 2667,
+      "exportedPath": "sec/privacy-pattern-3-zeto-enc-nullifiers.html",
+      "dependencies": []
+    },
+    "sec/Privacy Pattern 2 Zeto Enc.md": {
+      "modifiedTime": 1743765751005,
+      "sourceSize": 2509,
+      "exportedPath": "sec/privacy-pattern-2-zeto-enc.html",
+      "dependencies": []
+    },
+    "sec/Privacy Pattern 1 Zeto Anon.md": {
+      "modifiedTime": 1743765751005,
+      "sourceSize": 2575,
+      "exportedPath": "sec/privacy-pattern-1-zeto-anon.html",
+      "dependencies": []
+    },
+    "sec/anon-enc-nullifiers-circuit.html": {
+      "modifiedTime": 1743765751005,
+      "sourceSize": 34208,
+      "exportedPath": "sec/anon-enc-nullifiers-circuit.html",
+      "dependencies": []
+    },
+    "sec/anon-enc-circuit.html": {
+      "modifiedTime": 1743765751005,
+      "sourceSize": 33795,
+      "exportedPath": "sec/anon-enc-circuit.html",
+      "dependencies": []
+    },
+    "sec/anon-circuit.html": {
+      "modifiedTime": 1743765751005,
+      "sourceSize": 101299,
+      "exportedPath": "sec/anon-circuit.html",
+      "dependencies": []
+    },
+    "sec/Anon enc circuit.canvas": {
+      "modifiedTime": 1743765751005,
+      "sourceSize": 17370,
+      "exportedPath": "sec/anon-enc-circuit.html",
+      "dependencies": []
+    },
+    "sec/Anon circuit.canvas": {
+      "modifiedTime": 1743765751005,
+      "sourceSize": 10964,
+      "exportedPath": "sec/anon-circuit.html",
+      "dependencies": []
+    },
     "Index.md": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 453,
       "exportedPath": "index.html",
       "dependencies": []
     },
     "lib/scripts/graph-wasm.wasm": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 23377,
       "exportedPath": "lib/scripts/graph-wasm.wasm",
       "dependencies": []
     },
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/6155340132a851f6089e.svg": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 315,
       "exportedPath": "lib/media/6155340132a851f6089e.svg",
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1743654611059,
-      "sourceSize": 5214,
+      "modifiedTime": 1743765751005,
+      "sourceSize": 7404,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/graph-view.js": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 15519,
       "exportedPath": "lib/scripts/graph-view.js",
       "dependencies": []
     },
     "lib/scripts/graph-wasm.js": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 14021,
       "exportedPath": "lib/scripts/graph-wasm.js",
       "dependencies": []
     },
     "lib/scripts/graph-render-worker.js": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 5179,
       "exportedPath": "lib/scripts/graph-render-worker.js",
       "dependencies": []
     },
     "lib/scripts/tinycolor.js": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 29832,
       "exportedPath": "lib/scripts/tinycolor.js",
       "dependencies": []
     },
     "lib/scripts/pixi.js": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 449509,
       "exportedPath": "lib/scripts/pixi.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 1105,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/scripts/graph-data.js": {
-      "modifiedTime": 1743654611059,
-      "sourceSize": 783,
+      "modifiedTime": 1743765751005,
+      "sourceSize": 802,
       "exportedPath": "lib/scripts/graph-data.js",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 137466,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/other-plugins.css": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 14414,
       "exportedPath": "lib/styles/other-plugins.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 225163,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 339,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 2141,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1743654611059,
+      "modifiedTime": 1743765751005,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []

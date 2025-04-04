@@ -29,7 +29,7 @@ Alice calls `transfer()` with:
 inputs = [commitment_A],
 outputs = [commitment_B, commitment_A_change],
 encryptionNonce = <random_nonce>,
-ecdhPublicKey = pubKey_A,
+ecdhPublicKey = ephemeral_pubKey,
 encryptedValues = [encrypted_data_for_B],
 proof = <Groth16_ZKP>,
 ```
@@ -48,7 +48,7 @@ proof = <Groth16_ZKP>,
 	- Marks `commitment_A` as spent.
 	- Adds `commitment_B` (Bob’s) and `commitment_A_change` (Alice’s) to the ledger.
 #### 5. Bob Decrypts His UTXO
-- **Bob** uses his `privKey_B` and Alice’s `ecdhPublicKey` to compute `shared_secret`.
+- **Bob** uses his `privKey_B` and the `ephemeral_pubKey` to compute `shared_secret`.
 - Decrypts `encryptedValues` using `shared_secret` and `nonce`.
 - Now knows `value=10` and `salt_B` to spend `commitment_B` later.
 

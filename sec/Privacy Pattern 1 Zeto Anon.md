@@ -19,7 +19,7 @@ Alice creates:
 - **Zero-Knowledge Proof (ZKP)**:
 	- Proves:
 	    1. She knows `(value=15, salt_A, privKey_A)` for `commitment_A`.
-	    2. **Mass conservation**: `15 (input) = 10 (to Bob) + 5 (change)`.
+	    2. Mass conservation: `15 (input) = 10 (to Bob) + 5 (change)`.
 	    3. Outputs are valid (range-checked, correct hashes).
 #### 3. Alice Submits the Transaction
 - Calls `transfer()` on `Zeto_Anon` with:

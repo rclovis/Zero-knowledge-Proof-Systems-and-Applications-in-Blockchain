@@ -42,7 +42,7 @@ proof = <Groth16_ZKP>,
 2. **Proof Validation**:
 	- Checks ZKP conditions (nullifiers in SMT, encryption, mass conservation)
 
-![[Anon enc nullifiers circuit.canvas|Anon enc nullifiers circuit]]
+![[Anon nullifiers circuit.canvas|Anon enc nullifiers circuit]]
 
 3. **State Update**:
 	- Adds `nullifier_A` to the SMT (updating the root).
