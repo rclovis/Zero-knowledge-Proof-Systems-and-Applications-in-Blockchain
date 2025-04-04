@@ -1,4 +1,266 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[vault]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.png</url><title>vault</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 04 Apr 2025 11:22:35 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 04 Apr 2025 11:22:31 GMT</pubDate><ttl>60</ttl><dc:creator></dc:creator><item><title><![CDATA[Utils]]></title><description><![CDATA[ 
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[vault]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.png</url><title>vault</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 04 Apr 2025 11:28:53 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 04 Apr 2025 11:28:49 GMT</pubDate><ttl>60</ttl><dc:creator></dc:creator><item><title><![CDATA[Privacy Pattern 1 Zeto Anon]]></title><description><![CDATA[ 
+ <br><br>The&nbsp;Zeto_Anon&nbsp;contract is a privacy-focused fungible token implementation using zero-knowledge proofs (ZKPs) to anonymize transactions. It leverages the&nbsp;UTXO (Unspent Transaction Output)&nbsp;model (similar to Bitcoin) with cryptographic commitments and ZK-SNARKs (Groth16) for privacy.<br><br><br>Alice wants to send 10 zeto tokens to Bob <br><br>
+<br>Alice and Bob generate BabyJubjub key pairs:
+
+<br>Alice: (privKey_A, pubKey_A)
+<br>Bob: (privKey_B, pubKey_B)
+
+
+<br>Alice has existing UTXOs (UTXO worth 15 tokens) stored as a commitment:
+
+<br>commitment_A = hash(value=15, salt_A, pubKey_A)
+
+
+<br><br>Alice creates:<br>
+<br>Inputs: Spends her UTXO (commitment_A).
+<br>Outputs:
+
+<br>Bob’s UTXO: commitment_B = hash(value=10, salt_B, pubKey_B) (sent to Bob).
+<br>Change UTXO: commitment_A_change = hash(value=5, salt_A_new, pubKey_A) (returned to herself).
+
+
+<br>Zero-Knowledge Proof (ZKP):
+
+<br>Proves:
+
+<br>She knows (value=15, salt_A, privKey_A) for commitment_A.
+<br>Mass conservation: 15 (input) = 10 (to Bob) + 5 (change).
+<br>Outputs are valid (range-checked, correct hashes).
+
+
+
+
+<br><br>
+<br>Calls transfer() on Zeto_Anon with:
+<br>inputs = [commitment_A],
+outputs = [commitment_B, commitment_A_change],
+proof = &lt;Groth16 ZKP&gt;,
+<br><br>
+<br>Contract Checks:
+
+<br>Input UTXO (commitment_A) exists and is unspent.
+<br>Output UTXOs (commitment_B, commitment_A_change) are new.
+
+
+<br>Proof Verification:
+
+<br>Groth16Verifier_Anon validates the ZKP:
+
+<br>Correctness of commitments.
+<br>No double-spending or inflation.
+
+
+
+
+<br> Anon circuit<br>
+<br>State Update:
+
+<br>Marks commitment_A as spent.
+<br>Adds commitment_B (Bob’s UTXO) and commitment_A_change (Alice’s change) to the ledger.
+
+
+<br><br>
+<br>Bob sees no on-chain link to Alice (only commitment_B exists).
+<br>To spend his UTXO later, Bob:
+<br>Uses his privKey_B to generate a ZKP proving ownership of commitment_B.
+<br><br><br>
+<br>Anonymity:
+
+<br>No on-chain link between Alice and Bob.
+<br>External observers only see opaque commitments (e.g., hash(10, salt_B, pubKey_B)).
+
+
+<br>No Traceability:
+
+<br>Even if Bob’s pubKey_B is known, the salt (salt_B) hides the UTXO’s uniqueness.
+
+
+<br>Cryptographic Guarantees:
+
+<br>Soundness: ZKP ensures Alice can’t cheat (e.g., create tokens from nothing).
+<br>Unlinkability: Cannot correlate commitment_A and commitment_B.
+
+
+]]></description><link>sec/privacy-pattern-1-zeto-anon.html</link><guid isPermaLink="false">sec/Privacy Pattern 1 Zeto Anon.md</guid><pubDate>Fri, 04 Apr 2025 08:15:58 GMT</pubDate></item><item><title><![CDATA[Privacy Pattern 2 Zeto Enc]]></title><description><![CDATA[ 
+ <br><br>The&nbsp;Zeto_AnonEnc&nbsp;contract extends the privacy features of the previous&nbsp;Zeto_Anon&nbsp;by adding&nbsp;encryption&nbsp;to protect UTXO data for receivers. It combines&nbsp;zero-knowledge proofs (ZKPs)&nbsp;with&nbsp;Elliptic Curve Diffie-Hellman (ECDH)&nbsp;encryption.<br><br><br>Alice wants to send 10 zeto tokens to Bob <br><br>
+<br>Alice (sender) and Bob (receiver) generate BabyJubjub key pairs:
+
+<br>Alice: (privKey_A, pubKey_A)
+<br>Bob: (privKey_B, pubKey_B)
+
+
+<br>Alice has an input UTXO: commitment_A = hash(15, salt_A, pubKey_A).
+<br><br>
+<br>Alice creates:
+
+<br>Outputs:
+
+<br>Bob’s UTXO: commitment_B = hash(10, salt_B, pubKey_B).
+<br>Change UTXO: commitment_A_change = hash(5, salt_new, pubKey_A).
+
+
+
+
+<br>Encrypted Data:
+
+<br>Uses ECDH to compute a shared secret: shared_secret = ECDH(privKey_A, pubKey_B).
+<br>Encrypts (value=10, salt_B) with shared_secret and a nonce.
+<br>Generates encryptedValues (e.g., [encrypted_value, encrypted_salt, parity_bit]).
+
+
+<br>ZKP:
+
+<br>Proves:
+
+<br>Valid input/output commitments.
+<br>Correct encryption of commitment_B using pubKey_B.
+<br>Mass conservation (15 = 10 + 5).
+
+
+
+
+<br><br>Alice calls transfer() with:<br>inputs = [commitment_A],
+outputs = [commitment_B, commitment_A_change],
+encryptionNonce = &lt;random_nonce&gt;,
+ecdhPublicKey = ephemeral_pubKey,
+encryptedValues = [encrypted_data_for_B],
+proof = &lt;Groth16_ZKP&gt;,
+<br><br>
+<br>Contract Checks:
+
+<br>Input UTXOs are unspent.
+<br>Outputs are new.
+
+
+<br>Proof Verification:
+
+<br>Verifies:
+
+<br>Correct encryption via ecdhPublicKey and encryptedValues.
+<br>ZKP conditions (mass conservation, valid UTXOs).
+
+
+
+
+<br> Anon enc circuit<br>
+<br>State Update:
+
+<br>Marks commitment_A as spent.
+<br>Adds commitment_B (Bob’s) and commitment_A_change (Alice’s) to the ledger.
+
+
+<br><br>
+<br>Bob uses his privKey_B and the ephemeral_pubKey to compute shared_secret.
+<br>Decrypts encryptedValues using shared_secret and nonce.
+<br>Now knows value=10 and salt_B to spend commitment_B later.
+<br><br><br>
+<br>Receiver Privacy:
+
+<br>Even if commitment_B is public, only Bob can decrypt its value/salt.
+
+
+<br>Data Availability:
+
+<br>Encrypted data is stored on-chain, ensuring Bob can always decrypt.
+
+
+<br>Replay Protection:
+
+<br>Unique nonce per transaction prevents reusing encrypted data.
+
+
+]]></description><link>sec/privacy-pattern-2-zeto-enc.html</link><guid isPermaLink="false">sec/Privacy Pattern 2 Zeto Enc.md</guid><pubDate>Fri, 04 Apr 2025 08:19:24 GMT</pubDate></item><item><title><![CDATA[Privacy Pattern 3 Zeto Enc Nullifiers]]></title><description><![CDATA[ 
+ <br><br>The&nbsp;Zeto_AnonEncNullifier&nbsp;contract enhances privacy and security by introducing&nbsp;nullifiers&nbsp;and&nbsp;Sparse Merkle Trees (SMTs)&nbsp;to the previous encrypted UTXO model.<br><br><br>Alice wants to send 10 zeto tokens to Bob <br><br>
+<br>Alice (sender) and Bob (receiver) generate BabyJubjub key pairs:
+
+<br>Alice: (privKey_A, pubKey_A)
+<br>Bob: (privKey_B, pubKey_B)
+
+
+<br>Alice has a UTXO represented by commitment_A = hash(15, salt_A, pubKey_A).
+<br>Nullifier: nullifier_A = hash(commitment_A, privKey_A) is stored in the SMT.
+<br><br>
+<br>Alice creates:
+
+<br>Outputs:
+
+<br>Bob’s UTXO: commitment_B = hash(10, salt_B, pubKey_B).
+<br>Change UTXO: commitment_A_change = hash(5, salt_new, pubKey_A).
+
+
+
+
+<br>Nullifiers: [nullifier_A] to mark commitment_A as spent.
+<br>Encrypted Data:
+
+<br>Uses ECDH to compute a shared secret: shared_secret = ECDH(privKey_A, pubKey_B).
+<br>Encrypts (value=10, salt_B) with shared_secret and a nonce.
+<br>Generates encryptedValues (e.g., [encrypted_value, encrypted_salt, parity_bit]).
+
+
+<br>ZKP:
+
+<br>Proves:
+
+<br>nullifier_A exists in the SMT with root root.
+<br>15 = 10 + 5 (mass conservation).
+<br>Valid encryption of commitment_B.
+
+
+
+
+<br><br>Alice calls transfer() with:<br>nullifiers = [nullifier_A],
+outputs = [commitment_B, commitment_A_change],
+root = current_SMT_root,
+encryptionNonce = &lt;random_nonce&gt;,
+ecdhPublicKey = pubKey_A,
+encryptedValues = [encrypted_data_for_B],
+proof = &lt;Groth16_ZKP&gt;,
+<br><br>
+<br>Contract Checks:
+
+<br>Verifies the ZKP includes the correct SMT root.
+
+
+<br>Proof Validation:
+
+<br>Checks ZKP conditions (nullifiers in SMT, encryption, mass conservation)
+
+
+<br> Anon nullifiers circuit<br>
+<br>State Update:
+
+<br>Adds nullifier_A to the SMT (updating the root).
+<br>Adds commitment_B and commitment_A_change to the ledger.
+
+
+<br><br>
+<br>Bob uses his privKey_B and Alice’s ecdhPublicKey to compute shared_secret.
+<br>Decrypts encryptedValues using shared_secret and nonce.
+<br>Now knows value=10 and salt_B to spend commitment_B later.
+<br><br><br>
+<br>Double-Spending Prevention:
+
+<br>Nullifiers are added to the SMT; reuse is detected via Merkle inclusion proofs.
+
+
+<br>Data Confidentiality:
+
+<br>UTXO values/salts encrypted with ECDH (only receivers can decrypt).
+
+
+<br>Anonymity:
+
+<br>SMT hides which nullifier corresponds to which UTXO.
+
+
+<br>Integrity:
+
+<br>ZK-SNARKs ensure all rules (mass conservation, valid SMT root) are followed.
+
+
+]]></description><link>sec/privacy-pattern-3-zeto-enc-nullifiers.html</link><guid isPermaLink="false">sec/Privacy Pattern 3 Zeto Enc Nullifiers.md</guid><pubDate>Fri, 04 Apr 2025 08:19:46 GMT</pubDate></item><item><title><![CDATA[Privacy Pattern 4 KYC]]></title><description><![CDATA[ 
+ ]]></description><link>sec/privacy-pattern-4-kyc.html</link><guid isPermaLink="false">sec/Privacy Pattern 4 KYC.md</guid><pubDate>Fri, 04 Apr 2025 11:28:41 GMT</pubDate></item><item><title><![CDATA[Utils]]></title><description><![CDATA[ 
  <br><br>export async function newUser(signer: Signer) {
   const { privKey, pubKey } = genKeypair();
   const formattedPrivateKey = formatPrivKeyForBabyJub(privKey);
@@ -161,353 +423,7 @@
   }
   return returnValues;
 }
-]]></description><link>sec/utils.html</link><guid isPermaLink="false">sec/Utils.md</guid><pubDate>Fri, 04 Apr 2025 02:33:26 GMT</pubDate></item><item><title><![CDATA[Privacy Pattern 4 KYC]]></title><description><![CDATA[ 
- <br><br>The Zeto_AnonEncNullifierKyc contract extends the privacy-preserving UTXO model with KYC (Know Your Customer) compliance while maintaining anonymity. It combines:<br>
-<br>Nullifiers &amp; Sparse Merkle Trees (SMTs): For double-spending prevention.
-<br>ECDH Encryption: For receiver confidentiality.
-<br>KYC Registry: A whitelist of approved public keys stored in a Merkle tree.
-<br>ZK-SNARKs: Prove transaction validity without revealing sensitive data.
-<br><br><br><br>
-<br>KYC Registration:
-
-<br>Contract owner calls register(pubKey_A) and register(pubKey_B).
-<br>Updates the identitiesRoot Merkle root.
-
-
-<br>Alice’s UTXO:
-
-<br>commitment_A = hash(15, salt_A, pubKey_A).
-<br>nullifier_A = hash(commitment_A, privKey_A).
-
-
-<br><br>
-<br>Alice creates:
-
-<br>Outputs:
-
-<br>commitment_B = hash(10, salt_B, pubKey_B) (Bob’s UTXO).
-<br>commitment_A_change = hash(5, salt_new, pubKey_A) (change).
-
-
-
-
-<br>ZKP:
-
-<br>Proves:
-
-<br>pubKey_A and pubKey_B are in the KYC registry (identitiesRoot).
-<br>nullifier_A is in the SMT (root).
-<br>Valid encryption of commitment_B.
-<br>15 = 10 + 5.
-
-
-
-
-<br><br>Alice calls transfer() with:<br>nullifiers = [nullifier_A],
-outputs = [commitment_B, commitment_A_change],
-root = current_SMT_root,
-encryptedValues = [encrypted_data_for_B],
-proof = &lt;Groth16_ZKP&gt;,
-...
-<br><br>
-<br>Contract Checks:
-
-<br>Validates the ZKP includes the correct identitiesRoot and SMT root.
-
-
-<br>Proof Validation:
-
-<br>Verifies all ZKP conditions (KYC, nullifiers, encryption, etc.).
-
-
-<br>State Update:
-
-<br>Adds nullifier_A to the SMT.
-<br>Adds new UTXOs to the ledger.
-
-
-<br><br>
-<br>Uses privKey_B to decrypt encryptedValues.
-<br><br><br>
-<br>KYC Enforcement:
-
-<br>Only registered public keys can send/receive UTXOs in transfer().
-<br>Deposit/Withdraw: No KYC checks (gas optimization), but non-KYC users cannot transfer tokens further.
-
-
-<br>Privacy Preservation:
-
-<br>Anonymity: No link between real identities and public keys.
-<br>Confidentiality: UTXO values encrypted for receivers.
-
-
-<br>Integrity:
-
-<br>ZK-SNARKs ensure all rules (mass conservation, valid SMT roots, KYC) are followed.
-
-
-]]></description><link>sec/privacy-pattern-4-kyc.html</link><guid isPermaLink="false">sec/Privacy Pattern 4 KYC.md</guid><pubDate>Thu, 03 Apr 2025 04:26:10 GMT</pubDate></item><item><title><![CDATA[Privacy Pattern 3 Zeto Enc Nullifiers]]></title><description><![CDATA[ 
- <br><br>The&nbsp;Zeto_AnonEncNullifier&nbsp;contract enhances privacy and security by introducing&nbsp;nullifiers&nbsp;and&nbsp;Sparse Merkle Trees (SMTs)&nbsp;to the previous encrypted UTXO model.<br><br><br>Alice wants to send 10 zeto tokens to Bob <br><br>
-<br>Alice (sender) and Bob (receiver) generate BabyJubjub key pairs:
-
-<br>Alice: (privKey_A, pubKey_A)
-<br>Bob: (privKey_B, pubKey_B)
-
-
-<br>Alice has a UTXO represented by commitment_A = hash(15, salt_A, pubKey_A).
-<br>Nullifier: nullifier_A = hash(commitment_A, privKey_A) is stored in the SMT.
-<br><br>
-<br>Alice creates:
-
-<br>Outputs:
-
-<br>Bob’s UTXO: commitment_B = hash(10, salt_B, pubKey_B).
-<br>Change UTXO: commitment_A_change = hash(5, salt_new, pubKey_A).
-
-
-
-
-<br>Nullifiers: [nullifier_A] to mark commitment_A as spent.
-<br>Encrypted Data:
-
-<br>Uses ECDH to compute a shared secret: shared_secret = ECDH(privKey_A, pubKey_B).
-<br>Encrypts (value=10, salt_B) with shared_secret and a nonce.
-<br>Generates encryptedValues (e.g., [encrypted_value, encrypted_salt, parity_bit]).
-
-
-<br>ZKP:
-
-<br>Proves:
-
-<br>nullifier_A exists in the SMT with root root.
-<br>15 = 10 + 5 (mass conservation).
-<br>Valid encryption of commitment_B.
-
-
-
-
-<br><br>Alice calls transfer() with:<br>nullifiers = [nullifier_A],
-outputs = [commitment_B, commitment_A_change],
-root = current_SMT_root,
-encryptionNonce = &lt;random_nonce&gt;,
-ecdhPublicKey = pubKey_A,
-encryptedValues = [encrypted_data_for_B],
-proof = &lt;Groth16_ZKP&gt;,
-<br><br>
-<br>Contract Checks:
-
-<br>Verifies the ZKP includes the correct SMT root.
-
-
-<br>Proof Validation:
-
-<br>Checks ZKP conditions (nullifiers in SMT, encryption, mass conservation)
-
-
-<br> Anon nullifiers circuit<br>
-<br>State Update:
-
-<br>Adds nullifier_A to the SMT (updating the root).
-<br>Adds commitment_B and commitment_A_change to the ledger.
-
-
-<br><br>
-<br>Bob uses his privKey_B and Alice’s ecdhPublicKey to compute shared_secret.
-<br>Decrypts encryptedValues using shared_secret and nonce.
-<br>Now knows value=10 and salt_B to spend commitment_B later.
-<br><br><br>
-<br>Double-Spending Prevention:
-
-<br>Nullifiers are added to the SMT; reuse is detected via Merkle inclusion proofs.
-
-
-<br>Data Confidentiality:
-
-<br>UTXO values/salts encrypted with ECDH (only receivers can decrypt).
-
-
-<br>Anonymity:
-
-<br>SMT hides which nullifier corresponds to which UTXO.
-
-
-<br>Integrity:
-
-<br>ZK-SNARKs ensure all rules (mass conservation, valid SMT root) are followed.
-
-
-]]></description><link>sec/privacy-pattern-3-zeto-enc-nullifiers.html</link><guid isPermaLink="false">sec/Privacy Pattern 3 Zeto Enc Nullifiers.md</guid><pubDate>Fri, 04 Apr 2025 08:19:46 GMT</pubDate></item><item><title><![CDATA[Privacy Pattern 2 Zeto Enc]]></title><description><![CDATA[ 
- <br><br>The&nbsp;Zeto_AnonEnc&nbsp;contract extends the privacy features of the previous&nbsp;Zeto_Anon&nbsp;by adding&nbsp;encryption&nbsp;to protect UTXO data for receivers. It combines&nbsp;zero-knowledge proofs (ZKPs)&nbsp;with&nbsp;Elliptic Curve Diffie-Hellman (ECDH)&nbsp;encryption.<br><br><br>Alice wants to send 10 zeto tokens to Bob <br><br>
-<br>Alice (sender) and Bob (receiver) generate BabyJubjub key pairs:
-
-<br>Alice: (privKey_A, pubKey_A)
-<br>Bob: (privKey_B, pubKey_B)
-
-
-<br>Alice has an input UTXO: commitment_A = hash(15, salt_A, pubKey_A).
-<br><br>
-<br>Alice creates:
-
-<br>Outputs:
-
-<br>Bob’s UTXO: commitment_B = hash(10, salt_B, pubKey_B).
-<br>Change UTXO: commitment_A_change = hash(5, salt_new, pubKey_A).
-
-
-
-
-<br>Encrypted Data:
-
-<br>Uses ECDH to compute a shared secret: shared_secret = ECDH(privKey_A, pubKey_B).
-<br>Encrypts (value=10, salt_B) with shared_secret and a nonce.
-<br>Generates encryptedValues (e.g., [encrypted_value, encrypted_salt, parity_bit]).
-
-
-<br>ZKP:
-
-<br>Proves:
-
-<br>Valid input/output commitments.
-<br>Correct encryption of commitment_B using pubKey_B.
-<br>Mass conservation (15 = 10 + 5).
-
-
-
-
-<br><br>Alice calls transfer() with:<br>inputs = [commitment_A],
-outputs = [commitment_B, commitment_A_change],
-encryptionNonce = &lt;random_nonce&gt;,
-ecdhPublicKey = ephemeral_pubKey,
-encryptedValues = [encrypted_data_for_B],
-proof = &lt;Groth16_ZKP&gt;,
-<br><br>
-<br>Contract Checks:
-
-<br>Input UTXOs are unspent.
-<br>Outputs are new.
-
-
-<br>Proof Verification:
-
-<br>Verifies:
-
-<br>Correct encryption via ecdhPublicKey and encryptedValues.
-<br>ZKP conditions (mass conservation, valid UTXOs).
-
-
-
-
-<br> Anon enc circuit<br>
-<br>State Update:
-
-<br>Marks commitment_A as spent.
-<br>Adds commitment_B (Bob’s) and commitment_A_change (Alice’s) to the ledger.
-
-
-<br><br>
-<br>Bob uses his privKey_B and the ephemeral_pubKey to compute shared_secret.
-<br>Decrypts encryptedValues using shared_secret and nonce.
-<br>Now knows value=10 and salt_B to spend commitment_B later.
-<br><br><br>
-<br>Receiver Privacy:
-
-<br>Even if commitment_B is public, only Bob can decrypt its value/salt.
-
-
-<br>Data Availability:
-
-<br>Encrypted data is stored on-chain, ensuring Bob can always decrypt.
-
-
-<br>Replay Protection:
-
-<br>Unique nonce per transaction prevents reusing encrypted data.
-
-
-]]></description><link>sec/privacy-pattern-2-zeto-enc.html</link><guid isPermaLink="false">sec/Privacy Pattern 2 Zeto Enc.md</guid><pubDate>Fri, 04 Apr 2025 08:19:24 GMT</pubDate></item><item><title><![CDATA[Privacy Pattern 1 Zeto Anon]]></title><description><![CDATA[ 
- <br><br>The&nbsp;Zeto_Anon&nbsp;contract is a privacy-focused fungible token implementation using zero-knowledge proofs (ZKPs) to anonymize transactions. It leverages the&nbsp;UTXO (Unspent Transaction Output)&nbsp;model (similar to Bitcoin) with cryptographic commitments and ZK-SNARKs (Groth16) for privacy.<br><br><br>Alice wants to send 10 zeto tokens to Bob <br><br>
-<br>Alice and Bob generate BabyJubjub key pairs:
-
-<br>Alice: (privKey_A, pubKey_A)
-<br>Bob: (privKey_B, pubKey_B)
-
-
-<br>Alice has existing UTXOs (UTXO worth 15 tokens) stored as a commitment:
-
-<br>commitment_A = hash(value=15, salt_A, pubKey_A)
-
-
-<br><br>Alice creates:<br>
-<br>Inputs: Spends her UTXO (commitment_A).
-<br>Outputs:
-
-<br>Bob’s UTXO: commitment_B = hash(value=10, salt_B, pubKey_B) (sent to Bob).
-<br>Change UTXO: commitment_A_change = hash(value=5, salt_A_new, pubKey_A) (returned to herself).
-
-
-<br>Zero-Knowledge Proof (ZKP):
-
-<br>Proves:
-
-<br>She knows (value=15, salt_A, privKey_A) for commitment_A.
-<br>Mass conservation: 15 (input) = 10 (to Bob) + 5 (change).
-<br>Outputs are valid (range-checked, correct hashes).
-
-
-
-
-<br><br>
-<br>Calls transfer() on Zeto_Anon with:
-<br>inputs = [commitment_A],
-outputs = [commitment_B, commitment_A_change],
-proof = &lt;Groth16 ZKP&gt;,
-<br><br>
-<br>Contract Checks:
-
-<br>Input UTXO (commitment_A) exists and is unspent.
-<br>Output UTXOs (commitment_B, commitment_A_change) are new.
-
-
-<br>Proof Verification:
-
-<br>Groth16Verifier_Anon validates the ZKP:
-
-<br>Correctness of commitments.
-<br>No double-spending or inflation.
-
-
-
-
-<br> Anon circuit<br>
-<br>State Update:
-
-<br>Marks commitment_A as spent.
-<br>Adds commitment_B (Bob’s UTXO) and commitment_A_change (Alice’s change) to the ledger.
-
-
-<br><br>
-<br>Bob sees no on-chain link to Alice (only commitment_B exists).
-<br>To spend his UTXO later, Bob:
-<br>Uses his privKey_B to generate a ZKP proving ownership of commitment_B.
-<br><br><br>
-<br>Anonymity:
-
-<br>No on-chain link between Alice and Bob.
-<br>External observers only see opaque commitments (e.g., hash(10, salt_B, pubKey_B)).
-
-
-<br>No Traceability:
-
-<br>Even if Bob’s pubKey_B is known, the salt (salt_B) hides the UTXO’s uniqueness.
-
-
-<br>Cryptographic Guarantees:
-
-<br>Soundness: ZKP ensures Alice can’t cheat (e.g., create tokens from nothing).
-<br>Unlinkability: Cannot correlate commitment_A and commitment_B.
-
-
-]]></description><link>sec/privacy-pattern-1-zeto-anon.html</link><guid isPermaLink="false">sec/Privacy Pattern 1 Zeto Anon.md</guid><pubDate>Fri, 04 Apr 2025 08:15:58 GMT</pubDate></item><item><title><![CDATA[Index]]></title><description><![CDATA[ 
+]]></description><link>sec/utils.html</link><guid isPermaLink="false">sec/Utils.md</guid><pubDate>Fri, 04 Apr 2025 02:33:26 GMT</pubDate></item><item><title><![CDATA[Index]]></title><description><![CDATA[ 
  <br><br>Zero Knowledge Interactive Proofs (ZKIP): Allow a prover to convince a verifier of a statement without revealing any additional information.<br>
 We are working with the framework <a data-tooltip-position="top" aria-label="https://hyperledger-labs.github.io/zeto/latest/" rel="noopener nofollow" class="external-link" href="https://hyperledger-labs.github.io/zeto/latest/" target="_blank">Zeto</a><br><br>We have different privacy patterns to look into<br>
 <br><a data-href="Privacy Pattern 1 Zeto Anon" href="sec/privacy-pattern-1-zeto-anon.html" class="internal-link" target="_self" rel="noopener nofollow">Privacy Pattern 1 Zeto Anon</a>
