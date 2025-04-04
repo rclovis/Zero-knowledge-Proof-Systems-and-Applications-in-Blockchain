@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[vault]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.png</url><title>vault</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 04 Apr 2025 11:28:53 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 04 Apr 2025 11:28:49 GMT</pubDate><ttl>60</ttl><dc:creator></dc:creator><item><title><![CDATA[Privacy Pattern 1 Zeto Anon]]></title><description><![CDATA[ 
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[vault]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.png</url><title>vault</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 04 Apr 2025 11:35:54 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 04 Apr 2025 11:35:49 GMT</pubDate><ttl>60</ttl><dc:creator></dc:creator><item><title><![CDATA[Privacy Pattern 1 Zeto Anon]]></title><description><![CDATA[ 
  <br><br>The&nbsp;Zeto_Anon&nbsp;contract is a privacy-focused fungible token implementation using zero-knowledge proofs (ZKPs) to anonymize transactions. It leverages the&nbsp;UTXO (Unspent Transaction Output)&nbsp;model (similar to Bitcoin) with cryptographic commitments and ZK-SNARKs (Groth16) for privacy.<br><br><br>Alice wants to send 10 zeto tokens to Bob <br><br>
 <br>Alice and Bob generate BabyJubjub key pairs:
 
@@ -260,7 +260,91 @@ proof = &lt;Groth16_ZKP&gt;,
 
 
 ]]></description><link>sec/privacy-pattern-3-zeto-enc-nullifiers.html</link><guid isPermaLink="false">sec/Privacy Pattern 3 Zeto Enc Nullifiers.md</guid><pubDate>Fri, 04 Apr 2025 08:19:46 GMT</pubDate></item><item><title><![CDATA[Privacy Pattern 4 KYC]]></title><description><![CDATA[ 
- ]]></description><link>sec/privacy-pattern-4-kyc.html</link><guid isPermaLink="false">sec/Privacy Pattern 4 KYC.md</guid><pubDate>Fri, 04 Apr 2025 11:28:41 GMT</pubDate></item><item><title><![CDATA[Utils]]></title><description><![CDATA[ 
+ <br><br>The Zeto_AnonEncNullifierKyc contract extends the privacy-preserving UTXO model with KYC (Know Your Customer) compliance while maintaining anonymity. It combines:<br>
+<br>Nullifiers &amp; Sparse Merkle Trees (SMTs): For double-spending prevention.
+<br>ECDH Encryption: For receiver confidentiality.
+<br>KYC Registry: A whitelist of approved public keys stored in a Merkle tree.
+<br>ZK-SNARKs: Prove transaction validity without revealing sensitive data.
+<br><br><br><br>
+<br>KYC Registration:
+
+<br>Contract owner calls register(pubKey_A) and register(pubKey_B).
+<br>Updates the identitiesRoot Merkle root.
+
+
+<br>Alice’s UTXO:
+
+<br>commitment_A = hash(15, salt_A, pubKey_A).
+<br>nullifier_A = hash(commitment_A, privKey_A).
+
+
+<br><br>
+<br>Alice creates:
+
+<br>Outputs:
+
+<br>commitment_B = hash(10, salt_B, pubKey_B) (Bob’s UTXO).
+<br>commitment_A_change = hash(5, salt_new, pubKey_A) (change).
+
+
+
+
+<br>ZKP:
+
+<br>Proves:
+
+<br>pubKey_A and pubKey_B are in the KYC registry (identitiesRoot).
+<br>nullifier_A is in the SMT (root).
+<br>Valid encryption of commitment_B.
+<br>15 = 10 + 5.
+
+
+
+
+<br><br>Alice calls transfer() with:<br>nullifiers = [nullifier_A],
+outputs = [commitment_B, commitment_A_change],
+root = current_SMT_root,
+encryptedValues = [encrypted_data_for_B],
+proof = &lt;Groth16_ZKP&gt;,
+...
+<br><br>
+<br>Contract Checks:
+
+<br>Validates the ZKP includes the correct identitiesRoot and SMT root.
+
+
+<br>Proof Validation:
+
+<br>Verifies all ZKP conditions (KYC, nullifiers, encryption, etc.).
+
+
+<br>State Update:
+
+<br>Adds nullifier_A to the SMT.
+<br>Adds new UTXOs to the ledger.
+
+
+<br><br>
+<br>Uses privKey_B to decrypt encryptedValues.
+<br><br><br>
+<br>KYC Enforcement:
+
+<br>Only registered public keys can send/receive UTXOs in transfer().
+<br>Deposit/Withdraw: No KYC checks (gas optimization), but non-KYC users cannot transfer tokens further.
+
+
+<br>Privacy Preservation:
+
+<br>Anonymity: No link between real identities and public keys.
+<br>Confidentiality: UTXO values encrypted for receivers.
+
+
+<br>Integrity:
+
+<br>ZK-SNARKs ensure all rules (mass conservation, valid SMT roots, KYC) are followed.
+
+
+]]></description><link>sec/privacy-pattern-4-kyc.html</link><guid isPermaLink="false">sec/Privacy Pattern 4 KYC.md</guid><pubDate>Fri, 04 Apr 2025 11:28:55 GMT</pubDate></item><item><title><![CDATA[Utils]]></title><description><![CDATA[ 
  <br><br>export async function newUser(signer: Signer) {
   const { privKey, pubKey } = genKeypair();
   const formattedPrivateKey = formatPrivKeyForBabyJub(privKey);
